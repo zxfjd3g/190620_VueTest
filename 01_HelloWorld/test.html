@@ -37,16 +37,20 @@ template: 模板
   <input type="text" v-model="msg">
   <p>Hello {{msg}}</p>
 </div>
+<!-- <p>{{msg}}</p> -->
 
 <script src="../js/vue.js"></script>
 <script>
   // 创建一个Vue的实例
   const vm = new Vue({ // 配置对象
     el: '#test',  // element, 值是选择器
-    data: { // 数据对象, 向模板提供数据
-      msg: 'atguigu' // 模板中可以直接读取此数据
+    data () {
+      return { // 数据对象, 向模板提供数据
+        msg: 'atguigu' // 模板中可以直接读取此数据
+      }
     }
   })
+  console.log(vm)
 
   // setInterval(() => {
   //   vm.msg = vm.msg + '--'  // 读和写都是data中的msg
